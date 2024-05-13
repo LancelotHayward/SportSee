@@ -1,4 +1,4 @@
-import "./Sidebar.scss";
+import "./Sidebar.scss"
 
 function Sidebar() {
 	return (
@@ -11,7 +11,7 @@ function Sidebar() {
 			</nav>
 			<p>Copyright, SportSee 2024</p>
 		</aside>
-	);
+	)
 }
 
-export default Sidebar;
+export default Sidebar

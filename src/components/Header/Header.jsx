@@ -1,4 +1,4 @@
-import "./Header.scss";
+import "./Header.scss"
 
 function Header() {
 	return (
@@ -11,7 +11,7 @@ function Header() {
 				<a href="/">Communauté</a>
 			</nav>
 		</header>
-	);
+	)
 }
 
-export default Header;
+export default Header
