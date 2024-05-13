@@ -1,10 +1,15 @@
 import "./Dashboard.scss";
 
+import Sidebar from "../../components/Sidebar/Sidebar.jsx";
+
 function Dashboard() {
 	return (
-		<main>
-			<p>Hi</p>
-		</main>
+		<div id="dashboard">
+			<Sidebar />
+			<main>
+				<p>Hi</p>
+			</main>
+		</div>
 	);
 }
 
