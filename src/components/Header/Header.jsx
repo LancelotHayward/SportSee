@@ -3,7 +3,13 @@ import "./Header.scss";
 function Header() {
 	return (
 		<header>
-			<h1>SportSee</h1>
+			<img src="logo.png" alt="SportSee" />
+			<nav>
+				<a href="/">Accueil</a>
+				<a href="/">Profil</a>
+				<a href="/">Réglage</a>
+				<a href="/">Communauté</a>
+			</nav>
 		</header>
 	);
 }
