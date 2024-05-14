@@ -7,21 +7,19 @@ import SpiderGraph from "../../components/SpiderGraph/SpiderGraph.jsx"
 import Score from "../../components/Score/Score.jsx"
 import Metric from "../../components/Metric/Metric.jsx"
 
-function Dashboard() {
-    const username = "Thomas"
-    const encouragement = "Félicitations ! Vous avez explosé vos objectifs hier 👏"
-    const calories = "1,930kCal"
-    const proteines = "155g"
-    const glucides = "290g"
-    const lipides = "50g"
-    
+const nonMockedData = {
+    "encouragement": "Félicitations ! Vous avez explosé vos objectifs hier 👏",
+    "average_session": "68 min"
+}
+
+function Dashboard({data, performance}) {
 	return (
 		<div id="dashboard">
 			<Sidebar />
 			<main>
 				<section id="header">
-					<p> Bonjour <strong>{username}</strong></p>
-					<p id="encouragement">{encouragement}</p>
+					<p> Bonjour <strong>{data.userInfos.firstName}</strong></p>
+					<p id="encouragement">{nonMockedData.encouragement}</p>
 				</section>
                 <section id="stats">
                     <div id="graphs">
@@ -33,10 +31,10 @@ function Dashboard() {
                         </div>
                     </div>
                     <div id="metrics">
-                        <Metric type="calories" count={calories}/>
-                        <Metric type="proteines" count={proteines}/>
-                        <Metric type="glucides" count={glucides}/>
-                        <Metric type="lipides" count={lipides}/>
+                        <Metric type="calories" count={data.keyData.calorieCount}/>
+                        <Metric type="proteines" count={data.keyData.proteinCount}/>
+                        <Metric type="glucides" count={data.keyData.carbohydrateCount}/>
+                        <Metric type="lipides" count={data.keyData.lipidCount}/>
                     </div>
                 </section>
 			</main>
