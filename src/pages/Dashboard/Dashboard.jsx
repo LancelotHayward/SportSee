@@ -1,3 +1,6 @@
+import { useParams } from "react-router-dom";
+import { useState, useEffect} from 'react';
+
 import "./Dashboard.scss"
 
 import Sidebar from "../../components/Sidebar/Sidebar.jsx"
@@ -12,13 +15,23 @@ const nonMockedData = {
     "average_session": "68 min"
 }
 
-function Dashboard({data, performance}) {
+function Dashboard({data, performance, userID}) {
+    const params = useParams()
+    userID = params.userID
+    const [userData, setData] = useState(data)
+    useEffect(() => {
+      fetch('http://localhost:3000/user/' + userID)
+        .then(response => response.json())
+        .then(json => setData(json))
+        .catch(error => console.error(error))
+    }, [userID])
+    console.log(userData)
 	return (
 		<div id="dashboard">
 			<Sidebar />
 			<main>
 				<section id="header">
-					<p> Bonjour <strong>{data.userInfos.firstName}</strong></p>
+					<p> Bonjour <strong>{userData.data.userInfos.firstName}</strong></p>
 					<p id="encouragement">{nonMockedData.encouragement}</p>
 				</section>
                 <section id="stats">
@@ -31,10 +44,10 @@ function Dashboard({data, performance}) {
                         </div>
                     </div>
                     <div id="metrics">
-                        <Metric type="calories" count={data.keyData.calorieCount}/>
-                        <Metric type="proteines" count={data.keyData.proteinCount}/>
-                        <Metric type="glucides" count={data.keyData.carbohydrateCount}/>
-                        <Metric type="lipides" count={data.keyData.lipidCount}/>
+                        <Metric type="calories" count={userData.data.keyData.calorieCount}/>
+                        <Metric type="proteines" count={userData.data.keyData.proteinCount}/>
+                        <Metric type="glucides" count={userData.data.keyData.carbohydrateCount}/>
+                        <Metric type="lipides" count={userData.data.keyData.lipidCount}/>
                     </div>
                 </section>
 			</main>

@@ -16,7 +16,7 @@ root.render(
 		<Router>
 			<Header />
 			<Routes>
-				<Route path="/" element={<Dashboard data={mock_main} performance={mock_performance}/>} />
+				<Route path="/:userID" element={<Dashboard data={mock_main} performance={mock_performance} userID="12"/>} />
 			</Routes>
 		</Router>
 	</React.StrictMode>,
