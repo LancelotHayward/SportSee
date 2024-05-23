@@ -1,10 +1,17 @@
+import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
 import "./DailyActivity.scss"
 
 function DailyActivity() {
     return (
-        <div id="DailyActivity">
-
-        </div>
+        <BarChart width={730} height={250} data={{ name: 'a', value: [5, 12] }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" fill="#8884d8" />
+            <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
     )
 }
 

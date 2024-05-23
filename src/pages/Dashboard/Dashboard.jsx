@@ -37,7 +37,7 @@ function Dashboard({data, performance, userID}) {
                 <section id="stats">
                     <div id="graphs">
                         <DailyActivity/>
-                        <div>
+                        <div id="three">
                             <SessionLength/>
                             <SpiderGraph/>
                             <Score/>
