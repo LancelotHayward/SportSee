@@ -3,6 +3,8 @@ import { useState, useEffect} from 'react';
 
 import "./Dashboard.scss"
 
+import GetData from "../../models/data.js"
+
 import Sidebar from "../../components/Sidebar/Sidebar.jsx"
 import DailyActivity from "../../components/DailyActivity/DailyActivity.jsx"
 import SessionLength from "../../components/SessionLength/SessionLength.jsx"
@@ -25,7 +27,7 @@ function Dashboard({data, performance, userID}) {
         .then(json => setData(json))
         .catch(error => console.error(error))
     }, [userID])
-    console.log(userData)
+    GetData(data)
 	return (
 		<div id="dashboard">
 			<Sidebar />
