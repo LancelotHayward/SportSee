@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 
 import "./Dashboard.scss"
 
-import GetData from "../../models/data.js"
+import getData from "../../models/data.js"
 
 import Sidebar from "../../components/Sidebar/Sidebar.jsx"
 import DailyActivity from "../../components/DailyActivity/DailyActivity.jsx"
@@ -22,12 +22,11 @@ function Dashboard({data, performance, userID}) {
     userID = params.userID
     const [userData, setData] = useState(data)
     useEffect(() => {
-      fetch('http://localhost:3000/user/' + userID)
-        .then(response => response.json())
-        .then(json => setData(json))
-        .catch(error => console.error(error))
+        async function getTheData() {
+            setData(await getData(userID))
+        }
+        getTheData()
     }, [userID])
-    GetData(data)
 	return (
 		<div id="dashboard">
 			<Sidebar />
