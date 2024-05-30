@@ -4,11 +4,11 @@ import "./Score.scss"
 function Score() {
     return (
         <RadialBarChart 
-            width={730} 
-            height={250} 
+            width={260} 
+            height={260} 
             innerRadius="10%" 
             outerRadius="80%" 
-            data={{name: 'a', value: 12}} 
+            data={{name: 'uv', value: 12}} 
             startAngle={180} 
             endAngle={0}
         >   

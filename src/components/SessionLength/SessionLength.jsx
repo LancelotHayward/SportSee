@@ -2,15 +2,24 @@ import { LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Line } from 'r
 import "./SessionLength.scss"
 
 function SessionLength() {
+    const data = [
+        {day: "L", minutes: "30"},
+        {day: "M", minutes: "45"},
+        {day: "M", minutes: "60"},
+        {day: "J", minutes: "25"},
+        {day: "V", minutes: "68"},
+        {day: "S", minutes: "45"},
+        {day: "D", minutes: "80"}
+    ]
     return (
-        <LineChart width={730} height={250} data={{name: 'a', value: 12}}
+        <LineChart width={260} height={260} data={data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            <XAxis dataKey="day" />
+            {/* <YAxis /> */}
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="Durée" stroke="#8884d8" />
+            <Line type="monotone" dataKey="minutes" stroke="#8884d8" />
         </LineChart>
     )
 }
