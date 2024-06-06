@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 
 import "./Dashboard.scss"
 
-import getData from "../../models/data.js"
+import getData from "../../services/api.js"
 
 import Sidebar from "../../components/Sidebar/Sidebar.jsx"
 import DailyActivity from "../../components/DailyActivity/DailyActivity.jsx"
@@ -20,7 +20,7 @@ const nonMockedData = {
 function Dashboard({data, performance, userID}) {
     const params = useParams()
     userID = params.userID
-    const [userData, setData] = useState(data)
+    const [userData, setData] = useState()
     useEffect(() => {
         async function getTheData() {
             setData(await getData(userID))
@@ -32,23 +32,23 @@ function Dashboard({data, performance, userID}) {
 			<Sidebar />
 			<main>
 				<section id="header">
-					<p> Bonjour <strong>{userData.data.userInfos.firstName}</strong></p>
+					<p> Bonjour <strong>{userData?.getUserInfos().firstName}</strong></p>
 					<p id="encouragement">{nonMockedData.encouragement}</p>
 				</section>
                 <section id="stats">
                     <div id="graphs">
-                        <DailyActivity/>
+                        <DailyActivity data={userData?.getActivity()}/>
                         <div id="three">
-                            <SessionLength/>
-                            <SpiderGraph/>
-                            <Score/>
+                            <SessionLength data={userData?.getSessionLengths()}/>
+                            <SpiderGraph data={userData?.getStats()}/>
+                            <Score data={userData?.getScore()}/>
                         </div>
                     </div>
                     <div id="metrics">
-                        <Metric type="calories" count={userData.data.keyData.calorieCount}/>
-                        <Metric type="proteines" count={userData.data.keyData.proteinCount}/>
-                        <Metric type="glucides" count={userData.data.keyData.carbohydrateCount}/>
-                        <Metric type="lipides" count={userData.data.keyData.lipidCount}/>
+                        <Metric type="calories" count={userData?.getKeyData().calorieCount}/>
+                        <Metric type="proteines" count={userData?.getKeyData().proteinCount}/>
+                        <Metric type="glucides" count={userData?.getKeyData().carbohydrateCount}/>
+                        <Metric type="lipides" count={userData?.getKeyData().lipidCount}/>
                     </div>
                 </section>
 			</main>

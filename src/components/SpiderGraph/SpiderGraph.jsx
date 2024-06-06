@@ -3,15 +3,7 @@ import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend }
 
 import "./SpiderGraph.scss"
 
-function SpiderGraph() {
-  const data = [
-    {stat: "Intensité", level: 2},
-    {stat: "Vitesse", level: 6},
-    {stat: "Force", level: 4.5},
-    {stat: "Endurance", level: 6},
-    {stat: "Energie", level: 6},
-    {stat: "Cardio", level: 2},
-  ]
+function SpiderGraph({data}) {
   return (
     <RadarChart outerRadius={90} width={260} height={260} data={data}>
       <PolarGrid />

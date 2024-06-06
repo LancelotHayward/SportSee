@@ -1,10 +1,10 @@
 import { BarChart, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import "./DailyActivity.scss"
 
-function DailyActivity() {
+function DailyActivity({data}) {
     return (
         // <ResponsiveContainer width={"100%"} height={"100%"}>
-            <BarChart width={730} height={250} data={[{day: "1", poids:"68", calories:"356"},{day: "2", poids:"65", calories:"400"}]}>
+            <BarChart width={730} height={250} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <Tooltip/>
                 <Legend />
