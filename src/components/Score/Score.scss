@@ -1,0 +1,10 @@
+#score {
+    position: relative;
+
+    #score-text {
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translate(-50%, -50%)
+    }
+}

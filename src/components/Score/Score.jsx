@@ -3,19 +3,25 @@ import "./Score.scss"
 
 function Score({data}) {
     return (
-        <RadialBarChart 
-            width={260} 
-            height={260} 
-            innerRadius="10%" 
-            outerRadius="80%" 
-            data={[{score: data}]} 
-            startAngle={180} 
-            endAngle={0}
-        >   
-            <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='score' />
-            <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
-            <Tooltip />
-        </RadialBarChart>
+        <div id="score">
+            <RadialBarChart 
+                width={260} 
+                height={260} 
+                innerRadius="90%" 
+                outerRadius="100%" 
+                data={[{score: data*100, fill: "#FF0000"}]} 
+                startAngle={180} 
+                endAngle={180-data*360}
+        >       
+                <RadialBar minAngle={0} background clockWise={true} dataKey='score' />
+                {/* <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" /> */}
+                <Tooltip />
+            </RadialBarChart>
+            <div id="score-text">
+                <strong>{data*100}%</strong>
+                <p>de votre objectif</p>
+            </div>
+        </div>
     )
 }
 
