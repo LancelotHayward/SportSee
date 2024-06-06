@@ -1,0 +1,14 @@
+#session-length {
+    background-color: #E60000;
+    border-radius: 5px;
+    background-image:
+        linear-gradient(to right,
+            #ff0000 70%,
+            #e60000 70%, );
+
+    #session-header {
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 150px;
+        margin-left: 34px;
+    }
+}

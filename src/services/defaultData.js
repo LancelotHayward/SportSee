@@ -1,6 +1,14 @@
 export const default_activity = [
     {day: "1", poids:"621", calories:"55"},
-    {day: "2", poids:"65", calories:"400"}
+    {day: "2", poids:"65", calories:"400"},
+    {day: "3", poids:"65", calories:"400"},
+    {day: "4", poids:"65", calories:"400"},
+    {day: "5", poids:"65", calories:"400"},
+    {day: "6", poids:"65", calories:"400"},
+    {day: "7", poids:"65", calories:"400"},
+    {day: "8", poids:"65", calories:"400"},
+    {day: "9", poids:"65", calories:"400"},
+    {day: "10", poids:"65", calories:"400"}
 ]
 
 export const default_session_lengths = [

@@ -1,0 +1,36 @@
+#daily-activity {
+    background-color: #FBFBFB;
+    padding-left: 30px;
+    border-radius: 5px;
+
+    #daily-header {
+        display: flex;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .dot {
+            margin-right: 30px;
+        }
+    }
+
+    .dot::before {
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        content: "";
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .black::before {
+        background-color: #282D30;
+    }
+
+    .red::before {
+        background-color: #E60000;
+    }
+}
