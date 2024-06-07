@@ -15,8 +15,8 @@ function DailyActivity({data}) {
                 <BarChart width={730} height={250} data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <Tooltip/>
-                    <Legend />
-                    <XAxis dataKey="day"/>
+                    <XAxis dataKey="day" axisLine={false} />
+                    <YAxis orientation='right' axisLine={false}/>
                     <Bar dataKey="poids" fill="#282D30" />
                     <Bar dataKey="calories" fill="#E60000" />
                 </BarChart>
