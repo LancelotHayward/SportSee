@@ -2,8 +2,38 @@
     display: flex;
     height: calc(1024px - 97px);
 
+    &>main {
+        padding-inline: 100px;
+    }
+
+    #header {
+        margin-bottom: 100px;
+
+        p {
+            margin: 0;
+            font-size: 18px;
+
+            &:nth-child(1) {
+                font-weight: 600;
+                font-size: 48px;
+                margin: 64px 0 32px;
+
+                strong {
+                    color: #FF0101;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
     #stats,
     #three {
         display: flex;
+        gap: 30px;
+    }
+
+    #three {
+        padding-top: 30px;
+        max-height: 260px;
     }
 }
