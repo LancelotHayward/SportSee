@@ -11,4 +11,22 @@
         max-width: 150px;
         margin-left: 34px;
     }
+
+    .label {
+        background-color: white;
+        padding: 9px;
+    }
+
+    .recharts-cartesian-axis-tick-line {
+        display: none;
+    }
+
+    .recharts-cartesian-axis-ticks {
+        transform: translateY(-50px);
+    }
+
+    .recharts-line-curve {
+        stroke: rgba(255, 255, 255, 0.5);
+        stroke-width: 2px;
+    }
 }

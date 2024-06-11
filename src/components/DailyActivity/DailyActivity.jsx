@@ -16,9 +16,10 @@ function DailyActivity({data}) {
                     <CartesianGrid strokeDasharray="3 3" />
                     <Tooltip/>
                     <XAxis dataKey="day" axisLine={false} />
-                    <YAxis orientation='right' axisLine={false}/>
-                    <Bar dataKey="poids" fill="#282D30" />
-                    <Bar dataKey="calories" fill="#E60000" />
+                    <YAxis orientation='right' axisLine={false} //domain={[69, 71]}/>
+                    />
+                    <Bar dataKey="poids" fill="#282D30" radius={[10, 10, 0, 0]} barSize={10}/>
+                    <Bar dataKey="calories" fill="#E60000" radius={[10, 10, 0, 0]} barSize={10}/>
                 </BarChart>
             {/* </ResponsiveContainer> */}
         </div>
