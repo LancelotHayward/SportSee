@@ -1,14 +1,14 @@
 export const default_activity = [
-    {day: "1", poids:"621", calories:"55"},
+    {day: "1", poids:"69", calories:"600"},
     {day: "2", poids:"65", calories:"400"},
-    {day: "3", poids:"65", calories:"400"},
-    {day: "4", poids:"65", calories:"400"},
+    {day: "3", poids:"64", calories:"400"},
+    {day: "4", poids:"63", calories:"256"},
     {day: "5", poids:"65", calories:"400"},
-    {day: "6", poids:"65", calories:"400"},
-    {day: "7", poids:"65", calories:"400"},
-    {day: "8", poids:"65", calories:"400"},
-    {day: "9", poids:"65", calories:"400"},
-    {day: "10", poids:"65", calories:"400"}
+    {day: "6", poids:"62", calories:"356"},
+    {day: "7", poids:"61", calories:"342"},
+    {day: "8", poids:"61", calories:"400"},
+    {day: "9", poids:"60", calories:"400"},
+    {day: "10", poids:"59", calories:"400"}
 ]
 
 export const default_session_lengths = [

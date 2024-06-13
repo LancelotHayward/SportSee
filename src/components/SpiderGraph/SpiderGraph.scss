@@ -1,3 +1,22 @@
 #spidergraph {
     background-color: #282D30;
+
+    .recharts-polar-grid-angle,
+    .recharts-polar-radius-axis {
+        display: none;
+    }
+
+    .recharts-polar-angle-axis-ticks {
+        .angleAxis {
+            display: none;
+        }
+
+        .recharts-polar-angle-axis-tick:nth-child(1) {
+            transform: translateY(-10px);
+        }
+
+        .recharts-polar-angle-axis-tick:nth-child(4) {
+            transform: translateY(10px);
+        }
+    }
 }

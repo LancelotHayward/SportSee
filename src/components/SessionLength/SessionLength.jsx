@@ -10,7 +10,7 @@ function SessionLength({data}) {
                 dot={{r:2}}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                <XAxis dataKey="day" axisLine={false} stroke="rgba(255, 255, 255, 0.5)"/>
+                <XAxis dataKey="day" axisLine={false} stroke="rgba(255, 255, 255, 1)"/>
                 {/* <YAxis /> */}
                 <Tooltip content={<LengthToolTip/>}/>
                 <Legend />

@@ -10,7 +10,7 @@ function getUnit(type) {
 function Metric({type, count}) {
     const icon_source = "metric-" + type + ".png"
     return (
-        <div className="Metric">
+        <div className="metric">
             <img src={icon_source} alt={type + " icon"}/>
             <div>
                 <strong>{count + getUnit(type)}</strong>
