@@ -37,4 +37,19 @@
         padding-top: 30px;
         max-height: 260px;
     }
+
+    @media (max-width: 1342px) {
+        &>main {
+            padding-inline: 3vw;
+        }
+
+        #stats {
+            flex-direction: column;
+        }
+
+        #metrics {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
 }
