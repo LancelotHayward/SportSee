@@ -18,7 +18,7 @@ function DailyActivity({data}) {
                     <Tooltip/>
                     <XAxis dataKey="day" axisLine={false} />
                     <YAxis orientation='right' axisLine={false} domain={['dataMin-1', 'dataMax + 1']}/>
-                    <Bar dataKey="poids" fill="#282D30" radius={[10, 10, 0, 0]} barSize={10}/>
+                    <Bar dataKey="kilogram" fill="#282D30" radius={[10, 10, 0, 0]} barSize={10}/>
                     <Bar dataKey="calories" fill="#E60000" radius={[10, 10, 0, 0]} barSize={10}/>
                 </BarChart> */}
             {/* </ResponsiveContainer> */}
@@ -35,7 +35,7 @@ function DailyActivity({data}) {
 						
 					/>
 					<YAxis
-						yAxisId="poids"
+						yAxisId="kilogram"
 						orientation="right"
 						tickMargin={30}
 						tick={{ fill: '#9B9EAC' }}
@@ -51,8 +51,8 @@ function DailyActivity({data}) {
 					/>
 					<Bar
 						
-						dataKey="poids"
-						yAxisId="poids"
+						dataKey="kilogram"
+						yAxisId="kilogram"
 						fill="#282D30"
 						radius={[3, 3, 0, 0]}
 					/>

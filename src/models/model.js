@@ -8,8 +8,8 @@ export class User {
   #todayScore
   #activity
   #session_lengths
-  #stats
-  constructor(id, userInfos, keyData, score = undefined, todayScore = undefined, activity = undefined, session_lengths = undefined, stats = undefined) {
+  #performance
+  constructor(id, userInfos, keyData, score = undefined, todayScore = undefined, activity = undefined, session_lengths = undefined, performance = undefined) {
     this.#id = id
     this.#userInfos = userInfos
     this.#keyData = keyData
@@ -17,7 +17,7 @@ export class User {
     this.#todayScore = todayScore
     this.#activity = activity
     this.#session_lengths = session_lengths
-    this.#stats = stats
+    this.#performance = performance
   }
 
   getId() {
@@ -47,10 +47,39 @@ export class User {
     }
     return this.#session_lengths
   }
-  getStats() {
-    if (this.#stats === undefined) {
-      return default_stats
-    }
-    return this.#stats
+  getPerformance() {
+    let kindTranslations = [
+      {
+      kind: 1,
+      translation: "Cardio"
+      },
+      {
+        kind: 2,
+        translation: "Energie"
+      },
+      {
+        kind: 3,
+        translation: "Endurance"
+      },
+      {
+        kind: 4,
+        translation: "Force"
+      },
+      {
+        kind: 5,
+        translation: "Vitesse"
+      },
+      {
+        kind: 6,
+        translation: "Intensité"
+      }
+    ]
+    const performance = this.#performance || default_stats
+    const performance_data = performance.map(stat => {
+      const label = kindTranslations.find(translation => stat.kind === translation.kind).translation
+      return {...stat, kind:label}
+    })
+    performance_data.reverse()
+    return performance_data
   }
 }

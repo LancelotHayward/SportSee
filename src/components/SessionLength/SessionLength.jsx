@@ -14,7 +14,7 @@ function SessionLength({data}) {
                 {/* <YAxis /> */}
                 <Tooltip content={<LengthToolTip/>}/>
                 <Legend />
-                <Line type="monotone" dataKey="minutes" stroke="white" dot={<div></div>}/>
+                <Line type="monotone" dataKey="sessionLength" stroke="white" dot={<div></div>}/>
             </LineChart>
         </div>
     )

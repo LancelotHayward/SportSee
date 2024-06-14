@@ -40,7 +40,7 @@ function Dashboard({data, performance, userID}) {
                         <DailyActivity data={userData?.getActivity()}/>
                         <div id="three">
                             <SessionLength data={userData?.getSessionLengths()}/>
-                            <SpiderGraph data={userData?.getStats()}/>
+                            <SpiderGraph data={userData?.getPerformance()}/>
                             <Score data={userData?.getScore()}/>
                         </div>
                     </div>

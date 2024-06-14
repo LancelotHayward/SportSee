@@ -5,6 +5,7 @@ aside {
     align-items: center;
     flex-grow: 1;
     max-width: 117px;
+    position: relative;
 
     nav {
         flex-grow: 0;
@@ -23,5 +24,6 @@ aside {
         transform-origin: right;
         left: calc(32px + 26px);
         bottom: 175px;
+        text-wrap: nowrap;
     }
 }
