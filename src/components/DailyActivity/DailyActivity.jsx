@@ -1,4 +1,5 @@
 import { BarChart, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import ActivityToolTip from "./ActivityToolTip.jsx"
 import "./DailyActivity.scss"
 
 function DailyActivity({data}) {
@@ -45,8 +46,8 @@ function DailyActivity({data}) {
 					/>
 					<YAxis hide yAxisId="calories" />
 					<Tooltip
-						
 						cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
+						content={<ActivityToolTip/>}
 					/>
 					<Bar
 						
