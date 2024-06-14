@@ -1,15 +1,10 @@
-#sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 aside {
     background-color: black;
     color: white;
     display: flex;
     align-items: center;
     flex-grow: 1;
+    max-width: 117px;
 
     nav {
         flex-grow: 0;

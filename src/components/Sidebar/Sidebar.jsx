@@ -2,7 +2,7 @@ import "./Sidebar.scss"
 
 function Sidebar() {
 	return (
-		<div id="sidebar">
+		// <div id="sidebar">
 			<aside>
 				<nav>
 					<img src="icon-breath.png" alt="breath" />
@@ -12,7 +12,7 @@ function Sidebar() {
 				</nav>
 				<p>Copyright, SportSee 2024</p>
 			</aside>
-		</div>
+		// </div>
 	)
 }
 
