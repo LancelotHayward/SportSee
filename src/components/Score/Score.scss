@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 #score {
     position: relative;
     background-color: #FBFBFB;
@@ -7,24 +9,33 @@
         position: absolute;
         color: #20253A;
         font-size: 15px;
+        font-weight: 600;
         padding-left: 15px;
         left: 30px;
         top: 24px;
+    }
+
+    .recharts-wrapper {
+        z-index: 1;
+        position: absolute;
     }
 }
 
 #score-text {
     position: absolute;
-    // right: 0;
-    // bottom: 50%;
-    // transform: translate(-50%, -50%)
-    width: 260px;
-    height: 260px;
+    $size: 150px;
+    $offset: calc((260px - $size) / 2);
+    transform: translate($offset, $offset);
+    width: $size;
+    height: $size;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     top: 0;
+    background: white;
+    border-radius: 50%;
+    z-index: 0;
 
     strong {
         font-size: 26px;
