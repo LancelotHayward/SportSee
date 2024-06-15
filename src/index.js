@@ -7,16 +7,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./components/Header/Header.jsx"
 import Dashboard from "./pages/Dashboard/Dashboard.jsx"
 
-import mock_main from "./mocks/mainpage.js"
-import mock_performance from "./mocks/performance.js"
-
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
 	<React.StrictMode>
 		<Router>
 			<Header />
 			<Routes>
-				<Route path="/:userID" element={<Dashboard data={mock_main} performance={mock_performance} userID="12"/>} />
+				<Route path="/:userID" element={<Dashboard userID/>} />
 			</Routes>
 		</Router>
 	</React.StrictMode>,

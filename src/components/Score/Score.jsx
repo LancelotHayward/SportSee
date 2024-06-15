@@ -2,7 +2,6 @@ import { RadialBarChart, RadialBar, ResponsiveContainer, Tooltip } from 'rechart
 import "./Score.scss"
 
 function Score({data}) {
-    console.log(data)
     return (
         <div id="score">
             <p>Score</p>

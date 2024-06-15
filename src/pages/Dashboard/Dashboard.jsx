@@ -17,13 +17,14 @@ const nonMockedData = {
     "average_session": "68 min"
 }
 
-function Dashboard({data, performance, userID}) {
+function Dashboard({userID}) {
     const params = useParams()
     userID = params.userID
+    const doMock = (userID === "mock")
     const [userData, setData] = useState()
     useEffect(() => {
         async function getTheData() {
-            setData(await getData(userID))
+            setData(await getData(userID, doMock))
         }
         getTheData()
     }, [userID])

@@ -30,22 +30,18 @@ export class User {
     return this.#keyData
   }
   getScore() {
-    if (this.#score === undefined) {
-      return this.#todayScore
-    }
-    return this.#score
+    return this.#score || this.#todayScore
   }
   getActivity() {
-    if (this.#activity === undefined) {
-      return default_activity
-    }
-    return this.#activity
+    return this.#activity.map(activity => {
+      return {...activity, day:activity.day.substring(9,10)}
+    })
   }
   getSessionLengths() {
-    if (this.#session_lengths === undefined) {
-      return default_session_lengths
-    }
-    return this.#session_lengths
+    const days = ["L", "M", "M", "J", "V", "S", "D"]
+    return this.#session_lengths.map(session => {
+      return {...session, day:days[session.day-1]}
+    })
   }
   getPerformance() {
     let kindTranslations = [
@@ -74,12 +70,11 @@ export class User {
         translation: "Intensité"
       }
     ]
-    const performance = this.#performance || default_stats
-    const performance_data = performance.map(stat => {
+    const performance = this.#performance.map(stat => {
       const label = kindTranslations.find(translation => stat.kind === translation.kind).translation
       return {...stat, kind:label}
     })
-    performance_data.reverse()
-    return performance_data
+    performance.reverse()
+    return performance
   }
 }
