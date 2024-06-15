@@ -1,4 +1,4 @@
-import { RadialBarChart, RadialBar, ResponsiveContainer, Tooltip } from 'recharts';
+import { RadialBarChart, RadialBar} from 'recharts';
 import "./Score.scss"
 
 function Score({data}) {

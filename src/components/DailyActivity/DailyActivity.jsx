@@ -1,4 +1,4 @@
-import { BarChart, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { BarChart, CartesianGrid, Tooltip, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import ActivityToolTip from "./ActivityToolTip.jsx"
 import "./DailyActivity.scss"
 
@@ -12,16 +12,6 @@ function DailyActivity({data}) {
                     <div className="red dot">Calories brûlées (kCal)</div>
                 </div>
             </div>
-            {/* <ResponsiveContainer width={"100%"} height={"100%"}> */}
-                {/* <BarChart width={730} height={250} data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <Tooltip/>
-                    <XAxis dataKey="day" axisLine={false} />
-                    <YAxis orientation='right' axisLine={false} domain={['dataMin-1', 'dataMax + 1']}/>
-                    <Bar dataKey="kilogram" fill="#282D30" radius={[10, 10, 0, 0]} barSize={10}/>
-                    <Bar dataKey="calories" fill="#E60000" radius={[10, 10, 0, 0]} barSize={10}/>
-                </BarChart> */}
-            {/* </ResponsiveContainer> */}
             <ResponsiveContainer width="100%" height={200}>
 				<BarChart data={data} barSize={7} barGap={8}>
 					<CartesianGrid strokeDasharray="3" vertical={false} />
