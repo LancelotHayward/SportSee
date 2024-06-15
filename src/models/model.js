@@ -1,5 +1,3 @@
-import { default_activity, default_session_lengths, default_stats } from "../services/defaultData"
-
 export class User {
   #id
   #userInfos
